@@ -54,7 +54,9 @@ export default function LTVCharts({ timeSeriesData }: LTVChartsProps) {
               style={{ fontSize: '12px' }}
             />
             <Tooltip
-              formatter={(value: number) => formatCurrency(value)}
+              // valueが number または undefined でも受け取れるようにし、
+              // undefined の場合は 0 として扱うように修正
+              formatter={(value: number | undefined) => formatCurrency(value ?? 0)}
               labelFormatter={(label) => `日付: ${label}`}
               contentStyle={{
                 backgroundColor: '#fff',
