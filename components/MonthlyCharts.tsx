@@ -57,7 +57,7 @@ export default function MonthlyCharts({ monthlyData }: MonthlyChartsProps) {
               style={{ fontSize: '12px' }}
             />
             <Tooltip
-              formatter={(value: number) => formatCurrency(value)}
+              formatter={(value: number | undefined) => formatCurrency(value ?? 0)}
               labelFormatter={(label) => `期間: ${formatMonth(label)}`}
               contentStyle={{
                 backgroundColor: '#fff',
@@ -94,7 +94,7 @@ export default function MonthlyCharts({ monthlyData }: MonthlyChartsProps) {
               style={{ fontSize: '12px' }}
             />
             <Tooltip
-              formatter={(value: number) => formatCurrency(value)}
+              formatter={(value: number | undefined) => formatCurrency(value ?? 0)}
               labelFormatter={(label) => `期間: ${formatMonth(label)}`}
               contentStyle={{
                 backgroundColor: '#fff',
@@ -135,7 +135,7 @@ export default function MonthlyCharts({ monthlyData }: MonthlyChartsProps) {
             />
             <YAxis stroke="#71717a" style={{ fontSize: '12px' }} />
             <Tooltip
-              formatter={(value: number) => `${value}人`}
+              formatter={(value: number | undefined) => `${value ?? 0}人`}
               labelFormatter={(label) => `期間: ${formatMonth(label)}`}
               contentStyle={{
                 backgroundColor: '#fff',
