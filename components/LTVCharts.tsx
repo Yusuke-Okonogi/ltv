@@ -96,7 +96,7 @@ export default function LTVCharts({ timeSeriesData }: LTVChartsProps) {
               style={{ fontSize: '12px' }}
             />
             <Tooltip
-              formatter={(value: number) => formatCurrency(value)}
+              formatter={(value: number | undefined) => formatCurrency(value ?? 0)}
               labelFormatter={(label) => `日付: ${label}`}
               contentStyle={{
                 backgroundColor: '#fff',
@@ -126,7 +126,7 @@ export default function LTVCharts({ timeSeriesData }: LTVChartsProps) {
             />
             <YAxis stroke="#71717a" style={{ fontSize: '12px' }} />
             <Tooltip
-              formatter={(value: number) => `${value}人`}
+              formatter={(value: number | undefined) => `${value ?? 0}人`}
               labelFormatter={(label) => `日付: ${label}`}
               contentStyle={{
                 backgroundColor: '#fff',
